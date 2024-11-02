@@ -1,0 +1,20 @@
+<!-- Source: index_split_001.html -->
+<body class="calibre">
+<p class="block_5" id="calibre_pb_2">Table of Contents for Volume 38</p>
+<p class="block_6"><span id="id_toc"></span><a class="calibre2" href="index_split_002.html#id_Toc172476614"><span class="text_">Arc 8 Chapter 61 – Palladio Manesque</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_003.html#id_Toc172476615"><span class="text_">Arc 8 Chapter 62 – The Power of Love</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_004.html#id_Toc172476616"><span class="text_">Arc 8 Chapter 63 – Upon These Lips I Savor This Miracle</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_006.html#id_Toc172476617"><span class="text_">Arc 8 Chapter 64 – Parent and Child of the Empire</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_009.html#id_Toc172476618"><span class="text_">Arc 8 Chapter 65 – Starfall Upon the Imperial Capital</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_011.html#id_Toc172476619"><span class="text_">Arc 8 Chapter 66 – The Magic Crystal Cannon</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_012.html#id_Toc172476620"><span class="text_">Arc 8 Chapter 67 – The Cards in One’s Hand</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_014.html#id_Toc172476621"><span class="text_">Arc 8 Chapter 68 – The Man I Fell For</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_016.html#id_Toc172476622"><span class="text_">Arc 8 Chapter 69 – I Forgive You</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_017.html#id_Toc172476623"><span class="text_">Arc 8 Chapter 70 – The Final Stratagem</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_018.html#id_Toc172476624"><span class="text_">Arc 8 Chapter 71 – Heroic Reveries</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_020.html#id_Toc172476625"><span class="text_">Arc 8 Chapter 72 – The Sun Princess</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_022.html#id_Toc172476626"><span class="text_">Arc 8 Chapter 73 – Fated Foes</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_025.html#id_Toc172476627"><span class="text_">Arc 8 Chapter 74 – Love</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_027.html#id_Toc172476628"><span class="text_">Arc 8 Curtain’s Close – Priscilla Barielle</span></a></p>
+<p class="block_6"><a class="calibre2" href="index_split_031.html#id_Toc172476629"><span class="text_">Other Volumes</span></a></p>
+</body>

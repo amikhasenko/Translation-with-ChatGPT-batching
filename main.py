@@ -2,7 +2,6 @@ import os
 import ebooklib
 from ebooklib import epub
 from bs4 import BeautifulSoup
-import re
 
 # Function to split HTML content into chunks of no more than 60,000 characters based on paragraphs
 def split_html_into_chunks(html_content, max_chars=60000):

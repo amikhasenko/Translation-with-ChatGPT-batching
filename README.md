@@ -1,9 +1,9 @@
 # About
 
-This repository was created to translate the Re:Zero web novel into German, aiming to make the translation process cost-effective and reproducible. Current alternatives on GitHub often:
+This repository was created to translate the Re:Zero web novel into German, aiming to make the translation process cost-effective and repeatable. Current options of translating:
 1. Do not support EPUB translations.
-2. Do not utilize ChatGPT, leading to subpar results.
-3. Do not implement batching, which makes translations twice as expensive.
+2. Do not utilize AI translation, what limits quality.
+3. Expensive.
 
 # Cost Overview
 

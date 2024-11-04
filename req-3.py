@@ -117,7 +117,6 @@ if input("Are you sure?") == 'y':
         model="gpt-4o-mini",
     )
 
-    # Assuming `chat_completion` has a property `choices` that contains the output text.
     try:
         response_message = chat_completion.choices[0].message.content
         with open('out.txt', 'w') as f:

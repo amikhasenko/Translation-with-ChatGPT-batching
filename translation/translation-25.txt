@@ -1,7 +1,0 @@
-```
-<!-- Source: index_split_024.html -->
-<body class="calibre">
-<div class="image_full_spread_left"><img alt="image" src="images/image-5.png"/></div>
-<div class="image_full_spread_right"><img alt="image" src="images/image-6.png"/></div>
-</body>
-```

@@ -1,9 +1,0 @@
-```
-<!-- Source: index_split_013.html -->
-<body class="calibre">
-<p class="block_2">
-<span>
-</span></p>
-<figure class="nobreak_imgcapt"><img alt="Bild" class="nobreak_img" src="images/image-3.jpeg"/><figcaption class="text_imgcapt_center">Illustration aus Band 38, koloriert von V!c.ll2o (<a class="text_" href="https://x.com/112oVic2/status/1810350530025423097">Quelle</a>)</figcaption></figure>
-</body>
-```

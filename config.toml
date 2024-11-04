@@ -1,0 +1,10 @@
+[constants]
+epub_path = "C:\\Users\\mikha\\dt\\books\\[WN] ReZero - Volume 37.epub"
+txt_requests_folder = "output_requests"
+requests_file = "requests.jsonl"
+prompt = """
+Please translate the following text from English to German while maintaining the markdown of the html document, tone, style, and specific terminology that are characteristic of the Re: zero light novel series. Focus on preserving the emotional nuances of each character's dialogue and the detailed descriptions that contribute to the fantasy setting. Aim for a translation that reflects both the formal and casual language used in the series. Don't translate <!-- Source: {filename} -->. Don't add additional comments besides translation
+"""
+result_file = "output.jsonl"
+translation_folder = "translation"
+html_directory = "html"

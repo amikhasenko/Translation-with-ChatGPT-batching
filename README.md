@@ -36,3 +36,11 @@ To translate any EPUB book using this repository:
 7. Specify the input file in `5 - batch_to_txt.py` and run it.
 8. Merge the files into HTML format using `6 - merge.py`.
 9. Replace the HTML files in the EPUB using a tool like Sigil. It's also possible to automate this process with Python.
+
+# To do list
+- [ ] organise code 
+- [ ] create config file
+- [ ] create `requirements.txt` file
+- [ ] create UI
+- [ ] test on different machines
+- [ ] make a release 

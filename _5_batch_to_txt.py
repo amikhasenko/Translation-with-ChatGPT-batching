@@ -4,7 +4,8 @@ import os
 # Define the input file and output file pattern
 
 
-def to_txt(input_file):
+def to_txt(input_file, output_folder):
+    os.makedirs(output_folder, exist_ok=True)
     # Open the input file for reading
     with open(input_file, 'r') as file:
         # Iterate over each line in the file
@@ -21,13 +22,12 @@ def to_txt(input_file):
             
             # Define the output file name
             output_file = f'translation-{request_number}.txt'
-            
+            file_path = os.path.join(output_folder, output_file)
             # Write the content to the corresponding file
-            with open(output_file, 'w') as output:
+            with open(file_path, 'w') as output:
                 output.write(content)
 
 if __name__ == "__main__":
     input_file = 'output.jsonl'
     output_folder = 'translation'
-    os.makedirs(output_folder, exist_ok=True)
-    to_txt(input_file)
+    to_txt(input_file, output_folder)

@@ -42,7 +42,7 @@ def finish():
         (input("Are you ready to replace epub with translation (y/n): ") != "y"): 
             return
     to_txt(result_file, translation_folder)
-    merge(translation_folder, html_directory, epub_path)
+    merge(translation_folder, html_directory)
     html_files = [f for f in os.listdir(html_directory) if f.endswith('.html')]
     update_epub(epub_path, html_files)
 

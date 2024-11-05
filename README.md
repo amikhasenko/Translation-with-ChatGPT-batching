@@ -38,8 +38,9 @@ To translate any EPUB book using this repository:
 9. Replace the HTML files in the EPUB using a tool like Sigil. It's also possible to automate this process with Python.
 
 # To do list
-- [ ] organise code 
-- [ ] create config file
+- [X] organise code 
+- [X] create config file
+- [X] create CLI (`main.py`)
 - [ ] create `requirements.txt` file
 - [ ] create UI
 - [ ] test on different machines

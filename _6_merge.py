@@ -1,6 +1,7 @@
 import os
 import re
-
+import zipfile
+import os
 
 def merge(input_directory, output_directory):
     os.makedirs(output_directory, exist_ok=True)
@@ -34,9 +35,6 @@ def merge(input_directory, output_directory):
         else:
             print(f"File {input_filename} does not exist.")
 
-import zipfile
-import os
-from ebooklib import epub
 
 def update_epub(epub_path, html_files):
     # Check if the EPUB file already exists
@@ -55,14 +53,14 @@ def update_epub(epub_path, html_files):
                     print(f"Adding {file_name} to {epub_path}")
                 
                 # Add or replace the HTML file in the EPUB
-                epub_zip.writestr(f'OEBPS/{file_name}', html_content)
+                epub_zip.writestr(file_name, html_content)
 
 
 if __name__=="__main__":
     # Define the input and output directories
-    epub_path = "[WN] ReZero - Volume 38.epub"
+    epub_path = "[WN] ReZero - Volume 37.epub"
     input_directory = 'translation'
     output_directory = 'html'
-    merge(input_directory, output_directory, epub_path)
-    html_files = [f for f in os.listdir(output_directory) if f.endswith('.html')]
+    # merge(input_directory, output_directory, epub_path)
+    html_files = [os.path.join(output_directory, f) for f in os.listdir(output_directory) if f.endswith('.html')]
     update_epub(epub_path, html_files)

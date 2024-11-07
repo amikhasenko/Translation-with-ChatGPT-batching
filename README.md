@@ -36,7 +36,7 @@ python3 main.py
 - [X] organise code 
 - [X] create config file
 - [X] create CLI (`main.py`)
-- [ ] create `requirements.txt` file
+- [X] create `requirements.txt` file
 - [ ] create UI
 - [ ] test on different machines
 - [ ] make a release 

@@ -23,14 +23,15 @@ To translate any EPUB book using this repository:
 2. Clone repository and install dependances (using python 3.11+ - tested on python 3.12.3)
 ```
 git clone https://github.com/amikhasenko/Translation-with-ChatGPT-batching.git
-pip install -r requirements.txt
 cd Translation-with-ChatGPT-batching
+pip install -r requirements.txt
 ```
 3. Edit `config.toml`
 4. Launch main script
 ```
 python3 main.py
 ```
+5. Wait for the batch to complete and launch main script again. If the batch is completed it will replace epub file with it's translated version, if not - it'll show status and starting time.
 
 # To do list
 - [X] organise code 

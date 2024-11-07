@@ -19,24 +19,14 @@ Please note that the ChatGPT deposit expires one year after the transfer.
 
 To translate any EPUB book using this repository:
 
-1. Clone repository and install dependances (using python 3.12+)
+1. Set up an environment variable named `OPENAI_API_KEY` with your OpenAI API key
+2. Clone repository and install dependances (using python 3.12+)
 ```
-git clone 
+git clone https://github.com/amikhasenko/Translation-with-ChatGPT-batching.git
+pip install -r requirements.txt
+cd Translation-with-ChatGPT-batching
+python3 main.py
 ```
-3. Set up an environment variable named `OPENAI_API_KEY` with your OpenAI API key and execute the `3 - create_batch.py` file
-
-   Alternatively,
-
-   Upload your JSONL file to the ChatGPT UI.
-5. Wait for the batch processing to complete.
-6. Retrieve the batch result using its file ID.
-
-   Alternatively,
-
-   Download it directly from the UI.
-7. Specify the input file in `5 - batch_to_txt.py` and run it.
-8. Merge the files into HTML format using `6 - merge.py`.
-9. Replace the HTML files in the EPUB using a tool like Sigil. It's also possible to automate this process with Python.
 
 # To do list
 - [X] organise code 

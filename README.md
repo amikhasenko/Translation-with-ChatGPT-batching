@@ -26,7 +26,7 @@ git clone https://github.com/amikhasenko/Translation-with-ChatGPT-batching.git
 pip install -r requirements.txt
 cd Translation-with-ChatGPT-batching
 ```
-3. Edit `config.json`
+3. Edit `config.toml`
 4. Launch main script
 ```
 python3 main.py

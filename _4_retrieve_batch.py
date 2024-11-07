@@ -3,7 +3,25 @@ from openai import OpenAI
 from datetime import datetime
 import json
 
-def retreve(client, batch_id):
+def retreve(client: OpenAI, batch_id: str):
+    """
+    Retrieves the status of a batch processing job and handles different statuses accordingly.
+    
+    Depending on the batch's status, it provides information about the job's progress or outcome, 
+    including error handling and saving result files ("error.jsonl" and "output.jsonl") if available.
+
+    Parameters:
+    ----------
+    client : openai.OpenAI
+        The API client instance used to communicate with the server.
+    batch_id : str
+        The ID of the batch job to retrieve the status for.
+
+    Returns:
+    -------
+    bool
+        Returns `True` if the batch is completed successfully, `False` otherwise.
+    """
     batch = client.batches.retrieve(batch_id)
     print(batch.status)
     if batch.status == "failed":

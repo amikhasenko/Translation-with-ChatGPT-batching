@@ -4,6 +4,24 @@ import zipfile
 import os
 
 def merge(input_directory, output_directory):
+    """
+    Merges multiple translation text files into corresponding HTML files in the output directory.
+    
+    This function reads translation text files, extracts the translated content, and appends it to the appropriate
+    target HTML files in the output directory based on the provided file names in the translation files.
+
+    Parameters:
+    ----------
+    input_directory : str
+        Path to the directory containing the translation text files.
+    output_directory : str
+        Path to the directory where the HTML files will be written or appended with translated content.
+
+    Returns:
+    -------
+    None
+        The function does not return anything but writes content into the specified output directory.
+    """
     os.makedirs(output_directory, exist_ok=True)
     # Loop through all files named translation-0.txt to translation-n.txt
     file_pattern = re.compile(r'translation-(\d+)\.txt')
@@ -37,6 +55,24 @@ def merge(input_directory, output_directory):
 
 
 def update_epub(epub_path, html_files):
+    """
+    Updates an existing EPUB file by adding or replacing HTML files.
+
+    This function opens the specified EPUB file, and adds or replaces HTML files provided in the `html_files` list.
+    It appends new content or replaces existing files inside the EPUB archive.
+
+    Parameters:
+    ----------
+    epub_path : str
+        Path to the existing EPUB file to be updated.
+    html_files : list[str]
+        List of paths to the HTML files that need to be added or updated in the EPUB.
+
+    Returns:
+    -------
+    None
+        The function does not return anything but modifies the EPUB file by adding or updating HTML files.
+    """
     # Check if the EPUB file already exists
     if os.path.exists(epub_path):
         # Open the existing EPUB as a ZIP archive

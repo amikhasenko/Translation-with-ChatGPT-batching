@@ -1,10 +1,26 @@
 import json
 import os
 
-# Define the input file and output file pattern
-
 
 def to_txt(input_file, output_folder):
+    """
+    Converts JSONL response data into individual text files based on request IDs.
+    
+    This function reads a JSONL file where each line represents a response object. It extracts the translated
+    content from each response and writes it to a separate text file named `translation-<request_number>.txt`.
+
+    Parameters:
+    ----------
+    input_file : str
+        Path to the input JSONL file containing the responses.
+    output_folder : str
+        Path to the folder where the output text files will be saved.
+
+    Returns:
+    -------
+    None
+        The function saves the content from each request as a text file in the specified output folder.
+    """
     os.makedirs(output_folder, exist_ok=True)
     # Open the input file for reading
     with open(input_file, 'r') as file:

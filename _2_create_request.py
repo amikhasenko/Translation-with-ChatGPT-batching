@@ -3,6 +3,55 @@ import os
 import re
 
 def create_request_jsonl(input_directory, output_file, prompt):
+    """
+    Creates a JSON Lines (JSONL) file containing structured API requests based on text files in an input directory.
+
+    This function reads text files with names matching the pattern `request-<number>.txt` from a specified input
+    directory. It then formats the content of each file as a "user" message in a JSON request structure, adding a
+    "system" message with the specified prompt. Each structured request is written as a JSON object to a JSONL file,
+    with one request per line.
+
+    Parameters:
+    ----------
+    input_directory : str
+        Path to the directory containing the text files (`request-<number>.txt`) to process.
+    output_file : str
+        Path to the JSONL file where the formatted requests will be saved.
+    prompt : str
+        The prompt text for the "system" message in each request, providing context or instructions.
+
+    Process:
+    -------
+    1. Finds files in `input_directory` matching the naming pattern `request-<number>.txt`.
+    2. Sorts files by numeric order to maintain sequence in the output.
+    3. Detects missing indices in the sequence and prompts the user to continue if any are missing.
+    4. For each file, constructs a JSON object for an API request with:
+       - `custom_id`: unique identifier for each request, based on the file name.
+       - `method`: "POST", indicating an API request method.
+       - `url`: API endpoint path.
+       - `body`: JSON object with "model" specification, system message (`prompt`), and user message (`content`).
+    5. Writes each JSON object to the JSONL file, one per line.
+
+    Returns:
+    -------
+    None
+        The function writes the formatted requests to the specified JSONL file but does not return any value.
+
+    Example:
+    -------
+    >>> create_request_jsonl("input_directory", "output_requests.jsonl", "Translate the following text.")
+    # This will produce a JSONL file named `output_requests.jsonl`, with each line representing an API request.
+
+    Notes:
+    ------
+    - The function prompts the user if any `request-<number>.txt` files are missing from the sequence, allowing
+      the user to continue or stop.
+    - The "content" of each request is wrapped in triple backticks (```) to format it as a code block.
+
+    Dependencies:
+    ------------
+    Requires `os`, `re`, and `json` modules for file handling, pattern matching, and JSON serialization.
+    """
 
     # List all filenames in the input directory that match the pattern 'request-<number>.txt'
     file_pattern = re.compile(r'request-(\d+)\.txt')

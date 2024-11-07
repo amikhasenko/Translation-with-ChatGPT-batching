@@ -8,3 +8,4 @@ Please translate the following text from English to German while maintaining the
 result_file = "output.jsonl"
 translation_folder = "translation"
 html_directory = "html"
+max_chars = 50_000

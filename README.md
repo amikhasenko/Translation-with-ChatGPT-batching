@@ -19,10 +19,11 @@ Please note that the ChatGPT deposit expires one year after the transfer.
 
 To translate any EPUB book using this repository:
 
-1. Download the `.py` files from the repository and place both the EPUB file and the Python files in the same directory.
-2. Modify the `epub_path` variable in the `1 - split_epub.py` file (line 51) to match the name of your EPUB file, then run the script.
-3. Execute the `2 - create_request.py` file. You can adjust the translation languages on line 32 and modify the prompt to suit your needs.
-4. Set up an environment variable named `OPENAI_API_KEY` with your OpenAI API key and execute the `3 - create_batch.py` file
+1. Clone repository and install dependances (using python 3.12+)
+```
+git clone 
+```
+3. Set up an environment variable named `OPENAI_API_KEY` with your OpenAI API key and execute the `3 - create_batch.py` file
 
    Alternatively,
 

@@ -17,7 +17,7 @@ with open("config.toml", "rb") as f:
 locals().update(constants)
 
 def send_batch():
-    split_epub(epub_path, txt_requests_folder)
+    split_epub(epub_path, txt_requests_folder, max_chars)
     create_request_jsonl(txt_requests_folder, requests_file, prompt)
 
     client = OpenAI(api_key = os.environ.get("OPENAI_API_KEY"))

@@ -3,7 +3,7 @@ import zipfile
 from bs4 import BeautifulSoup
 
 # Function to split HTML content into chunks of no more than 50,000 characters based on paragraphs
-# 50_000/4 = 12_500 - approximate amonnt of tockens
+# 50_000/4 = 12_500 - approximate amonnt of tockens, works for englich-like languges
 def split_html_into_chunks(html_content: str, max_chars: int = 50_000, delimator: str = "\n") -> list[str]:
     """
     Splits HTML or text content into manageable chunks based on a specified character limit and delimiter.

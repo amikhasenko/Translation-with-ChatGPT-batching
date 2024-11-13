@@ -92,7 +92,8 @@ def create_request_jsonl(input_directory, output_file, prompt):
                                 "role": "user",
                                 "content": content,
                             }
-                        ]
+                        ],
+                        "temperature": 0.4,
                     }
                 }
                 

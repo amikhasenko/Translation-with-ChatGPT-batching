@@ -97,7 +97,7 @@ def extract_epub_content(epub_path):
     return content_html
 
 # Step 1: Split EPUB into smaller text files and save with references to HTML files
-def split_epub(epub_path, output_folder):
+def split_epub(epub_path, output_folder, max_chars: int = 50_000, delimator: str = "\n"):
     """
     Splits the content of an EPUB file into manageable text chunks and saves them to a specified folder.
 
@@ -144,7 +144,7 @@ def split_epub(epub_path, output_folder):
     chunk_counter = 0
 
     for file_name, html_content in content_html.items():
-        chunks = split_html_into_chunks(html_content)
+        chunks = split_html_into_chunks(html_content, max_chars, delimator)
         for chunk in chunks:
             with open(os.path.join(output_folder, f"request-{chunk_counter}.txt"), 'w', encoding='utf-8') as file:
                 # Add header to indicate the original HTML file

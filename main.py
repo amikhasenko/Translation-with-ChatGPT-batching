@@ -39,12 +39,12 @@ def finish():
         batch_data = json.load(file)
     results_ready = retreve(client, batch_data["batch_id"])
     if (not results_ready) or \
-        (input("Are you ready to replace epub with translation (y/n): ") != "y"): 
+        (input("Are you ready to create epub with translation (y/n): ") != "y"): 
             return
     to_txt(result_file, translation_folder)
     merge(translation_folder, html_directory)
-    html_files = [f for f in os.listdir(html_directory) if f.endswith('.html')]
-    update_epub(epub_path, html_files)
+    html_files = [os.path.join(html_directory, f) for f in os.listdir(html_directory) if f.endswith('.html')+f.endswith('.xhtml')]
+    create_epub_copy(epub_path, html_files)
 
 if __name__=="__main__":
     stage = int(input("What stage are you in?\n (1) Configured .toml file and tocken, ready to go!\n (2) Want to check if results are ready \n Your stage: "))

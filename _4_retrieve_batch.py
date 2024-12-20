@@ -32,10 +32,10 @@ def retreve(client: OpenAI, batch_id: str):
     elif batch.status == "expired":
         print("Batch could not be completed within the SLA time window, probably servers overloaded")
     elif batch.status == "completed":
-        print("Batch completed at:", datetime.fromtimestamp(batch.completed_at).strftime("%Y-%m-%d %H:%M:%S"))
+        print("Batch started at:", datetime.fromtimestamp(batch.created_at).strftime("%Y-%m-%d %H:%M:%S"))
         print("Batch completed at:", datetime.fromtimestamp(batch.completed_at).strftime("%Y-%m-%d %H:%M:%S"))
         print("Complited:",batch.request_counts.completed)
-        print("Failed:",batch.request_counts.completed)
+        print("Failed:",batch.request_counts.failed )
         if batch.error_file_id != None: 
             client.files.content(batch.error_file_id).write_to_file("error.jsonl")
         if batch.output_file_id != None: 

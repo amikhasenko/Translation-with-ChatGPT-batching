@@ -54,42 +54,43 @@ def merge(input_directory, output_directory):
             print(f"File {input_filename} does not exist.")
 
 
-def update_epub(epub_path, html_files):
+def create_epub_copy(original_epub_path, html_files):
     """
-    Updates an existing EPUB file by adding or replacing HTML files.
-
-    This function opens the specified EPUB file, and adds or replaces HTML files provided in the `html_files` list.
-    It appends new content or replaces existing files inside the EPUB archive.
+    Creates a copy of an existing EPUB file with specified HTML files added or replaced.
 
     Parameters:
     ----------
-    epub_path : str
-        Path to the existing EPUB file to be updated.
+    original_epub_path : str
+        Path to the original EPUB file to be copied and updated.
     html_files : list[str]
-        List of paths to the HTML files that need to be added or updated in the EPUB.
+        List of paths to the HTML files that need to be added or updated in the new EPUB.
 
     Returns:
     -------
     None
-        The function does not return anything but modifies the EPUB file by adding or updating HTML files.
+        The function creates a new EPUB file with updated HTML files.
     """
-    # Check if the EPUB file already exists
-    if os.path.exists(epub_path):
-        # Open the existing EPUB as a ZIP archive
-        with zipfile.ZipFile(epub_path, 'a') as epub_zip:
+    # Set to store the names of new or updated files
+    new_epub_path = original_epub_path[:-5]+"-ChatGPT-translated.epub"
+    html_filenames = {os.path.basename(html_file) for html_file in html_files}
+
+    # Open the original EPUB as a ZIP archive in read mode
+    with zipfile.ZipFile(original_epub_path, 'r') as original_epub:
+        # Create a new EPUB file (copy) in write mode
+        with zipfile.ZipFile(new_epub_path, 'w') as new_epub:
+            # Copy all files from the original EPUB to the new EPUB
+            for item in original_epub.infolist():
+                # If the file is not in `html_files`, copy it directly
+                if item.filename not in html_filenames:
+                    new_epub.writestr(item, original_epub.read(item.filename))
+            
+            # Add or replace HTML files specified in `html_files`
             for html_file in html_files:
                 file_name = os.path.basename(html_file)
                 with open(html_file, 'r', encoding='utf-8') as f:
                     html_content = f.read()
-                
-                # Check if the file already exists in the EPUB
-                if file_name in epub_zip.namelist():
-                    print(f"Replacing {file_name} in {epub_path}")
-                else:
-                    print(f"Adding {file_name} to {epub_path}")
-                
-                # Add or replace the HTML file in the EPUB
-                epub_zip.writestr(file_name, html_content)
+                print(f"{'Replacing' if file_name in original_epub.namelist() else 'Adding'} {file_name} in {new_epub_path}")
+                new_epub.writestr(file_name, html_content)
 
 
 if __name__=="__main__":
@@ -98,5 +99,5 @@ if __name__=="__main__":
     input_directory = 'translation'
     output_directory = 'html'
     # merge(input_directory, output_directory, epub_path)
-    html_files = [os.path.join(output_directory, f) for f in os.listdir(output_directory) if f.endswith('.html')]
+    html_files = [os.path.join(output_directory, f) for f in os.listdir(output_directory) if f.endswith('.html')+f.endswith('.xhtml')]
     update_epub(epub_path, html_files)
